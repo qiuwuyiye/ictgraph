@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<request>
+	<jobinstanceid>SK9cohJD4yklcD8dJuZXDA</jobinstanceid>
+	<context>
+		 <property name="userName" value="zhangsan" />
+		 <property name="queueName" value="queue1" />
+		 <property name="processId" value="dns" />
+		 <property name="tempDatabaseName" value="ictgraph" />
+		 <property name="tempHdfsBasePath" value="/user/ict/pagerank/"/> 
+	</context>
+	<operator name=" PageRank"  alias="PageRank" class="SK.A.Pagerank.ICTPageRank">
+		 <parameter name="srcNodeID">src</parameter>
+		 <parameter name="desNodeID">des</parameter>
+		 <parameter name="weight">value</parameter>
+		 <parameter name="inputTableName1">ictgraph.edges</parameter>
+         <parameter name="maxiterNumber">10</parameter>
+		 <parameter name="topK">20</parameter>
+		 <parameter name="numrand">1000</parameter>
+		 <parameter name="reducedDim">50</parameter>
+		 <parameter name="maxIteration">100</parameter>
+    </operator>
+    <datasets>
+		 <dataset name="inport1">
+			<row>ictgraph.edges</row>
+		 </dataset>
+		 <dataset name="inport_query">
+			<row>ictgraph.query</row>
+		 </dataset>
+		 <dataset name="inport_matrix">
+			<row>ictgraph.matrix</row>
+		 </dataset>
+		 <dataset name="inport_icmodel_seeds">
+				<row>ictgraph.icmodel_seeds</row>
+		 </dataset>
+		 <dataset name="outport">
+			<row>ictgraph.pagerank</row>
+		</dataset>
+    </datasets>
+</request>

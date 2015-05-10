@@ -1,0 +1,15 @@
+   CREATE TABLE vertices (vertice STRING, vd INT)
+   ROW FORMAT DELIMITED
+   FIELDS TERMINATED BY '\t'
+   LINES TERMINATED BY '\n'
+   STORED AS TEXTFILE;
+    
+   CREATE TABLE edges (src STRING, des STRING,ed DOUBLE)
+   ROW FORMAT DELIMITED
+   FIELDS TERMINATED BY '\t'
+   LINES TERMINATED BY '\n'
+   STORED AS TEXTFILE;
+   
+   LOAD DATA LOCAL INPATH '/home/liuwei/workspace/vertices.txt' OVERWRITE INTO TABLE vertices;
+   
+   LOAD DATA LOCAL INPATH '/home/liuwei/workspace/edges.txt' OVERWRITE INTO TABLE edges;

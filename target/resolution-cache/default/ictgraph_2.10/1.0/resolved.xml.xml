@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ivy-module version="2.0" xmlns:e="http://ant.apache.org/ivy/extra">
+	<info organisation="default"
+		module="ictgraph_2.10"
+		revision="1.0"
+		status="integration"
+		publication="20150414091405"
+	>
+		<description>
+		ictgraph
+		</description>
+	</info>
+	<configurations>
+		<conf name="compile" visibility="public" description=""/>
+		<conf name="runtime" visibility="public" description="" extends="compile"/>
+		<conf name="test" visibility="public" description="" extends="runtime"/>
+		<conf name="provided" visibility="public" description=""/>
+		<conf name="optional" visibility="public" description=""/>
+		<conf name="compile-internal" visibility="private" description="" extends="compile,optional,provided"/>
+		<conf name="runtime-internal" visibility="private" description="" extends="runtime,optional"/>
+		<conf name="test-internal" visibility="private" description="" extends="test,optional,provided"/>
+		<conf name="plugin" visibility="private" description=""/>
+		<conf name="sources" visibility="public" description=""/>
+		<conf name="docs" visibility="public" description=""/>
+		<conf name="pom" visibility="public" description=""/>
+		<conf name="scala-tool" visibility="private" description=""/>
+	</configurations>
+	<publications>
+		<artifact name="ictgraph_2.10" type="pom" ext="pom" conf="pom"/>
+		<artifact name="ictgraph_2.10" type="jar" ext="jar" conf="compile"/>
+		<artifact name="ictgraph_2.10" type="src" ext="jar" conf="sources" e:classifier="sources"/>
+		<artifact name="ictgraph_2.10" type="doc" ext="jar" conf="docs" e:classifier="javadoc"/>
+	</publications>
+	<dependencies>
+		<dependency org="org.scala-lang" name="scala-compiler" rev="2.10.4" conf="scala-tool->default,optional(default)"/>
+		<dependency org="org.scala-lang" name="scala-library" rev="2.10.4" conf="scala-tool->default,optional(default);compile->default(compile)"/>
+		<dependency org="org.apache.spark" name="spark-core_2.10" rev="1.3.0" conf="provided->default(compile)"/>
+		<dependency org="org.apache.spark" name="spark-mllib_2.10" rev="1.3.0" conf="provided->default(compile)"/>
+		<dependency org="jaxen" name="jaxen" rev="1.1.6" conf="compile->default(compile)"/>
+		<dependency org="dom4j" name="dom4j" rev="1.6.1" conf="compile->default(compile)"/>
+		<dependency org="org.apache.spark" name="spark-graphx_2.10" rev="1.3.0" conf="provided->default(compile)"/>
+		<dependency org="org.apache.hive.hcatalog" name="hive-hcatalog-core" rev="0.13.1" conf="provided->default(compile)"/>
+		<dependency org="org.apache.hadoop" name="hadoop-common" rev="2.5.0" conf="provided->default(compile)"/>
+		<dependency org="org.apache.hadoop" name="hadoop-hdfs" rev="2.5.0" conf="provided->default(compile)"/>
+		<dependency org="org.apache.hive" name="hive" rev="0.13.1" conf="provided->default(compile)"/>
+		<dependency org="org.apache.hive" name="hive-serde" rev="0.13.1" conf="provided->default(compile)"/>
+		<dependency org="org.apache.hadoop" name="hadoop-mapreduce-client-core" rev="2.5.0" conf="provided->default(compile)"/>
+		<dependency org="com.github.scopt" name="scopt_2.10" rev="3.2.0" conf="compile->default(compile)"/>
+		<dependency org="org.scalatest" name="scalatest_2.10" rev="2.2.3-SNAP2" conf="provided->default(compile)"/>
+		<dependency org="org.apache.hadoop" name="hadoop-client" rev="2.3.0" conf="provided->default(compile)"/>
+		<dependency org="org.apache.hbase" name="hbase" rev="0.98.1-cdh5.1.3" conf="provided->default(compile)"/>
+		<dependency org="org.apache.hbase" name="hbase-client" rev="0.98.1-cdh5.1.3" conf="provided->default(compile)"/>
+		<dependency org="org.apache.hbase" name="hbase-common" rev="0.98.1-cdh5.1.3" conf="provided->default(compile)"/>
+		<dependency org="org.apache.hbase" name="hbase-server" rev="0.98.1-cdh5.1.3" conf="provided->default(compile)"/>
+	</dependencies>
+</ivy-module>

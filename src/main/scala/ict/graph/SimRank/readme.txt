@@ -1,0 +1,3 @@
+SimRank 运行得到矩阵D
+SingleSourceSimrank 是一些主要函数
+SingleSource 运行得到相似用户

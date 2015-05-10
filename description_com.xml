@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<request>
+	<jobinstanceid>SK9cohJD4yklcD8dJuZXDA</jobinstanceid>
+	<context>
+		 <property name="userName" value="zhangsan" />
+		 <property name="queueName" value="queue1" />
+		 <property name="processId" value="dns" />
+		 <property name="tempDatabaseName" value="ictgraph" />
+		 <property name="tempHdfsBasePath" value="/user/ict/communitydetection/"/> 
+	</context>
+	<operator name=" CommunityDetection"  alias="CommunityDetection" class="SK.A.Pagerank.ICTCommunityDetection">
+		 <parameter name="srcNodeID">src</parameter>
+		 <parameter name="desNodeID">des</parameter>
+		 <parameter name="weight">value</parameter>
+         <parameter name="maxiterNumber">10</parameter>
+		 <parameter name="topK">20</parameter>
+		 <parameter name="numrand">1000</parameter>
+		 <parameter name="reducedDim">50</parameter>
+		 <parameter name="maxIteration">100</parameter>
+    </operator>
+    <datasets>
+		 <dataset name="inport">
+			<row>ictgraph.edges</row>
+		 </dataset>
+		 <dataset name="outport">
+			<row>ictgraph.community</row>
+		</dataset>
+    </datasets>
+</request>

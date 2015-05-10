@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<request>
+	<jobinstanceid>SK9cohJD4yklcD8dJuZXDA</jobinstanceid>
+	<context>
+		 <property name="userName" value="zhangsan" />
+		 <property name="queueName" value="queue1" />
+		 <property name="processId" value="dns" />
+		 <property name="tempDatabaseName" value="database1" />
+		 <property name="tempHdfsBasePath" value="$HDFSBasePath/20141216/jobinstanceid/${operator.name}"/> 
+	</context>
+	<operator name=" ICModel"  alias="ICModel" class="SK.A.Pagerank.ICTICModel">
+	     <parameter name="srcNodeID">src</parameter>
+		 <parameter name="desNodeID">des</parameter>
+		 <parameter name="weight">weight</parameter>
+		 <parameter name="seeds">seeds</parameter>
+         <parameter name="numrand">1000</parameter>
+    </operator>
+          <datasets>
+			<dataset name="inport">
+				<row>ictgraph.edges</row>
+			</dataset>
+			<dataset name="inport_icmodel_seeds">
+				<row>ictgraph.icmodel_seeds</row>
+			</dataset>
+			<dataset name="outport">
+				<row>ictgraph.icmodel</row>
+			</dataset>
+          </datasets>
+</request>

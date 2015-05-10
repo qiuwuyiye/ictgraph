@@ -1,0 +1,5 @@
+Pregel finished iteration 1
+Pregel finished iteration 2
+Pregel finished iteration 3
+Pregel finished iteration 4
+Pregel finished iteration 5
